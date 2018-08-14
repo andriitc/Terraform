@@ -1,4 +1,5 @@
 pipeline {
+  agent any
 //  agent { lable 'ec2-fleet' }
   options {
     buildDiscarder(logRotator(daysToKeepStr: '180', numToKeepStr: '100')), \
