@@ -5,6 +5,7 @@ node {
     }
     stage('Archive') {
       archiveArtifacts artifacts: '*.txt', excludes: '*.md'
+      sh "ls -la"
     }
   }
 }
