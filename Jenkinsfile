@@ -22,7 +22,7 @@ pipeline {
     stage("Test Color") {
         steps {
           wrap ([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
-              sh 'something that outputs ansi colored stuff'
+              sh ' echo something that outputs ansi colored stuff'
           }
         }
       }
