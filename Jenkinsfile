@@ -7,7 +7,7 @@ pipeline {
     //timeout(time: 1, unit: 'HOURS') \
     @ansiColor('xterm') \
     @timestamps()
-  }
+          }
   tools {
     gradle "Gradle"
   }
@@ -24,6 +24,7 @@ pipeline {
                          userRemoteConfigs: [[credentialsId: '62028f05-220e-4807-8aa4-68d01367bb96', \
                          url: 'https://github.com/andriitc/Terraform.git']]])
                     }
+                  }
               stage ("Color") {
                 writeFile file: "usefulfile.txt", text: "This file is useful, need to archive it."
               }
@@ -31,7 +32,7 @@ pipeline {
                 archiveArtifacts artifacts: '*.txt', excludes: '*.md'
                 sh "ls -la"
             }
-          }
+
         }
       }
     }
