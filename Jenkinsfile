@@ -6,7 +6,7 @@ pipeline {
     //pipelineTriggers([upstream('Terraform/master, '), pollSCM('0 1 * * *')]) \
     timeout(time: 1, unit: 'HOURS') \
     ansiColor('xterm') \
-    timestamps()
+    //timestamps()
           }
   stages {
     stage ('SCM') {
