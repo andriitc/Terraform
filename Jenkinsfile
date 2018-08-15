@@ -18,9 +18,11 @@ pipeline {
                  userRemoteConfigs: [[credentialsId: '62028f05-220e-4807-8aa4-68d01367bb96', \
                  url: 'https://github.com/andriitc/Terraform.git']]])
       }
-      steps {
-        wrap ([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
-            sh 'something that outputs ansi colored stuff'
+    stage ("Test Color") {
+        steps {
+          wrap ([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
+              sh 'something that outputs ansi colored stuff'
+          }
         }
       }
     }
