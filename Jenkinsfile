@@ -37,4 +37,7 @@ pipeline {
         }
       }
     }
+    catch(err) {
+      echo "This Job has been Aborted"
+    }
 }
