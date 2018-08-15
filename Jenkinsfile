@@ -9,7 +9,7 @@ pipeline {
     timestamps()
   }
   stages {
-    stage ('SCM') {
+    stage ("SCM") {
       steps {
                  checkout([$class: 'GitSCM', branches: [[name: '*/master']], \
                  doGenerateSubmoduleConfigurations: false, \
