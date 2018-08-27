@@ -2,7 +2,7 @@ pipeline {
  agent any
 //  agent { lable 'ec2-fleet' }
  triggers {
-   pollSCM('0 1 * * *'), upstream(upstreamProjects: 'sonarqube', threshold: hudson.model.Result.SUCCESS)
+   pollSCM('0 1 * * *') upstream(upstreamProjects: 'sonarqube', threshold: hudson.model.Result.SUCCESS)
  }
  options {
     buildDiscarder(logRotator(daysToKeepStr: '180', numToKeepStr: '100')) \
