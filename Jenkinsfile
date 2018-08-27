@@ -15,13 +15,8 @@ pipeline {
       steps {
         git branch: 'master', \
         credentialsId: '62028f05-220e-4807-8aa4-68d01367bb96', \
-        url: 'https://github.com/andriitc/Terraform.git'
-                // checkout([$class: 'GitSCM', branches: [[name: '*/master']], \
-                // doGenerateSubmoduleConfigurations: false, \
-                // extensions: [[$class: 'CloneOption', depth: 0, noTags: false, reference: '', shallow: false]], \
-                // submoduleCfg: [], \
-                // userRemoteConfigs: [[credentialsId: '62028f05-220e-4807-8aa4-68d01367bb96', \
-                // url: 'https://github.com/andriitc/Terraform.git']]])
+        url: 'https://github.com/andriitc/Terraform.git', \
+        noTags: 'false'
       }
     }
     stage("Test Color") {
@@ -34,3 +29,5 @@ pipeline {
 
   }
 }
+//checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '62028f05-220e-4807-8aa4-68d01367bb96', url: 'https://github.com/andriitc/Terraform.git']]])
+//checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CloneOption', depth: 0, noTags: false, reference: '', shallow: false]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '62028f05-220e-4807-8aa4-68d01367bb96', url: 'https://github.com/andriitc/Terraform.git']]])
