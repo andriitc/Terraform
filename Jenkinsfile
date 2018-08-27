@@ -8,7 +8,7 @@ pipeline {
 
  options {
     buildDiscarder(logRotator(daysToKeepStr: '180', numToKeepStr: '100'))
-    timeout(time: 1, unit: 'HOURS')
+    timeout(time: 10, unit: 'SECONDS')
     ansiColor('xterm')
     timestamps()
   }
@@ -27,6 +27,7 @@ pipeline {
         steps {
           wrap ([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'xterm']) {
               sh 'echo something that outputs ansi colored stuff'
+              sh 'sleep 20'
           }
         }
       }
