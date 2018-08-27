@@ -13,10 +13,13 @@ pipeline {
   stages {
     stage('SCM') {
       steps {
-        git branch: 'master', \
-        credentialsId: '62028f05-220e-4807-8aa4-68d01367bb96', \
-        url: 'https://github.com/andriitc/Terraform.git', \
-        noTags: 'false'
+        checkout([$class: 'GitSCM', \
+                  branches: [[name: '*/master']], \
+                  checkout([$class: 'GitSCM', \
+                  doGenerateSubmoduleConfigurations: false, \
+                  extensions: [[$class: 'CloneOption', depth: 0, noTags: false, reference: '', shallow: false]], \
+                  submoduleCfg: [], \
+                  userRemoteConfigs: [[credentialsId: '62028f05-220e-4807-8aa4-68d01367bb96', url: 'https://github.com/andriitc/Terraform.git']]])
       }
     }
     stage("Test Color") {
