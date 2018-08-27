@@ -15,7 +15,6 @@ pipeline {
       steps {
         checkout([$class: 'GitSCM', \
                   branches: [[name: '*/master']], \
-                  checkout([$class: 'GitSCM', \
                   doGenerateSubmoduleConfigurations: false, \
                   extensions: [[$class: 'CloneOption', depth: 0, noTags: false, reference: '', shallow: false]], \
                   submoduleCfg: [], \
