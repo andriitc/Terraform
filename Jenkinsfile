@@ -1,6 +1,6 @@
 pipeline {
- agent any
-//  agent { lable 'ec2-fleet' }
+ //agent any
+ agent { lable 'ec2-fleet' }
  triggers {
    pollSCM('0 1 * * *')
    //upstream(upstreamProjects: 'sonarqube', threshold: hudson.model.Result.SUCCESS)
@@ -23,7 +23,7 @@ pipeline {
                   userRemoteConfigs: [[credentialsId: '62028f05-220e-4807-8aa4-68d01367bb96', url: 'https://github.com/andriitc/Terraform.git']]])
       }
     }
-    stage("Test Color") {
+    stage("Build") {
         steps {
           wrap ([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'xterm']) {
               sh 'echo something that outputs ansi colored stuff'
