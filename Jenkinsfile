@@ -1,6 +1,6 @@
 pipeline {
  //agent any
- agent { lable 'ec2-fleet' }
+ agent { label 'ec2-fleet' }
  triggers {
    pollSCM('0 1 * * *')
    //upstream(upstreamProjects: 'sonarqube', threshold: hudson.model.Result.SUCCESS)
